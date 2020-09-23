@@ -1,11 +1,11 @@
 import setuptools
 
-with open("README.md", "r", encoding='utf-8') as fh:
+with open("README.MD", "r", encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="typora_cos",
-    version="2.0.1",
+    version="2.0.2",
     author="liaozibo",
     author_email="liaozibo@qq.com",
     description="tool for uploading typora images to qcloud cos",
