@@ -82,10 +82,10 @@ typora 设置：
 
 | 版本 | 描述         | 进度 |
 | ---- | ------------ | ---- |
-| v0   | 基本功能实现 |      |
-| v1   | 重构         | *    |
-| v2   | 命令行接口   |      |
-| v3   | 多线程       |      |
+| v1   | 基本功能实现 |      |
+| v2   | 重构         | *    |
+| v3   | 命令行接口   |      |
+| v4   | 多线程       |      |
 
 # 设计
 
@@ -100,5 +100,4 @@ typora 设置：
 
 其他：配置和代码解耦
 
-![image-20200922202756132](https://test-1253318070.cos.ap-nanjing.myqcloud.com/8bfbf09096c01b9e7a1d5eba9ede71a7.png)
-
+![image-20200923151137420](https://markdown-images-1253318070.cos.ap-nanjing.myqcloud.com/c567abf73ba8c450c8f563b732470ac3.png)

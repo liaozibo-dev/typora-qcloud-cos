@@ -30,6 +30,7 @@ def initConfig():
         print('从 https://console.cloud.tencent.com/cos5/bucket 创建存储桶并得到存储桶名称 bucket 和 所属区域 scheme')
     else:
         print("配置文件已存在，请先删除：", configFilePath)
+
 def upload():
     """
         从命令行读取一个或多个路径并将其文件上传到腾讯云对象存储
@@ -38,8 +39,8 @@ def upload():
     client = CosClient()
     urls = list()
     for path in paths:
-        resource = ResourceLoader.load(path)
-        cosFile = CosFile(resource.getBytes())
+        resourceLoader = ResourceLoader(path)
+        cosFile = CosFile(resourceLoader.getBytes())
         url = client.upload(cosFile)
         urls.append(url)
 
