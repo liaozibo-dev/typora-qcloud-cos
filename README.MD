@@ -1,3 +1,19 @@
+[TOC]
+
+# 介绍
+
+*Typora QCloud Cos* 是一个基于 Python 开发的 Typora 图片上传插件。可以自动地将 Typora 中的图片上传到腾讯云对象存储。
+
+---
+
+特性：
+* 支持本地图片和网络图片上传（将图片复制并粘贴到 typora）
+* 通过图片字节流识别图片格式
+* 通过 md5 避免重复上传图片
+* 简单，只需3步配置
+* 小巧，只有 21k
+* 开源，提供了UML类图，方便熟悉Python的小伙伴了解源码
+
 # 为什么
 
 通过 *Typora QCloud Cos* 将图片上传到腾讯云对象存储并得到图片外链，可以将 Markdown 文本和图片存储解耦，使得可以在任何地方浏览 Markdown 并且正常显示图片。
@@ -17,23 +33,16 @@
 ---
 
 
-安装：
+第一步，安装 Python 和 插件：
 
-[下载 Python](https://www.python.org/downloads/)
+[下载和安装 Python](https://www.python.org/downloads/)，安装时记得勾选 `Add Python to PATH` 选项
 
 ```bash
-# 安装 Python
 # 安装 typora_cos
 pip install -U typora_cos
 ```
-
 ---
-
-[创建存储桶](https://console.cloud.tencent.com/cos5/bucket#)：访问权限需要设置成 `公有读私有写`
-
-<img src="https://test-1253318070.cos.ap-nanjing.myqcloud.com/303049df7690b9b7a1dc19721265be6e.png" alt="image-20200922200543157" style="zoom: 45%;" />
-
-配置：
+第二步，执行以下命令生成配置文件，并用记事本打开：
 
 ```bash
 python -m typora_cos.qcloud --init
@@ -45,11 +54,19 @@ python -m typora_cos.qcloud --init
 >
 > 从 https://console.cloud.tencent.com/cos5/bucket 创建存储桶并得到存储桶名称 `bucket` 和 所属区域 `region`
 
+创建存储桶时需要勾选 `公有读私有写` 选项
+
+
+<img src="https://test-1253318070.cos.ap-nanjing.myqcloud.com/303049df7690b9b7a1dc19721265be6e.png" alt="image-20200922200543157" style="zoom: 45%;" />
+
+
 <img src="https://test-1253318070.cos.ap-nanjing.myqcloud.com/1b4d0796f82976f6d3983f71b320a95d.png" alt="image-20200922200904022" style="zoom: 45%;" />
 
 ---
 
-从命令行上传图片：
+
+第三步 （可选），在命令行进行测试
+
 
 ```bash
 python -m typora_cos.qcloud https://www.python.org/static/img/python-logo.png
@@ -67,7 +84,7 @@ python -m typora_cos.qcloud C:\Users\liaoz\Pictures\mc.jpg
 
 ---
 
-typora 设置：
+第四步（最后一步），typora 设置：
 
 ```
 文件 -> 偏好设置 -> 自定义命令 -> python -m typora_cos.qcloud
@@ -77,24 +94,18 @@ typora 设置：
 
 ---
 
-特性：
-* 支持本地图片和网络图片上传（将图片复制并粘贴到 typora）
-* 通过图片字节流识别图片格式
-* 通过 md5 避免重复上传图片
 
 已知问题：
 * 网络图片的URL不能包含请求参数（不能包含 `&` 字符）
 
-# 版本演进
-
-| 版本 | 描述         | 进度 |
-| ---- | ------------ | ---- |
-| v1   | 基本功能实现 |      |
-| v2   | 重构         | *    |
-| v3   | 命令行接口   |      |
-| v4   | 多线程       |      |
-
 # 设计
+
+如果大家对源码感兴趣，可以访问项目地址：
+
+* https://gitee.com/liaozb1996/typroa_qcloud_cos
+* https://github.com/liaozb1996/typora-qcloud-cos
+
+
 
 流程：
 
