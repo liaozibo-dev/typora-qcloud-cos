@@ -10,6 +10,13 @@
 
 # 如何使用
 
+视频教程：
+* [bilibili](https://www.bilibili.com/video/BV14k4y117Wd/)
+* [youtube](https://www.youtube.com/watch?v=iODN7TYASiY&ab_channel=ziboliao)
+
+---
+
+
 安装：
 
 [下载 Python](https://www.python.org/downloads/)
